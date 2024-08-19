@@ -1,0 +1,33 @@
+@startuml
+interface UsuarioIterator {
+~ Usuario next()
+~ void reset()
+~ boolean hasMore()
+}
+
+class Main {
++ {static} void main(String[])
+}
+
+class Usuario {
+- String nombre
+- int edad
++ String getNombre()
++ int getEdad()
+}
+
+
+class Usuarios {
+- ArrayList<Usuario> usuarios
+- int posicion
++ void crear(Usuario)
++ Usuario next()
++ void reset()
++ boolean hasMore()
+}
+
+
+
+
+UsuarioIterator <|.. Usuarios
+@enduml
